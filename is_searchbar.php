@@ -19,15 +19,20 @@ class Is_Searchbar extends Module
     {
         $this->name = 'is_searchbar';
         $this->author = 'Igor Stępień';
-        $this->version = '3.0.0';
+        $this->version = '3.0.1';
         $this->need_instance = 0;
 
         parent::__construct();
 
-        $this->displayName = $this->l('Search bar');
-        $this->description = $this->l('Adds a quick search field to your website.');
+        $this->displayName = $this->trans('Search bar', [], 'Modules.Issearchbar.Admin');
+        $this->description = $this->trans('Adds a quick search field to your website.', [], 'Modules.Issearchbar.Admin');
 
         $this->ps_versions_compliancy = ['min' => '8.0.0', 'max' => _PS_VERSION_];
+    }
+
+    public function isUsingNewTranslationSystem()
+    {
+        return true;
     }
 
     /**
